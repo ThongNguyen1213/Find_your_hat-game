@@ -8,9 +8,14 @@ const pathCharacter = '*';
 class Field {
     constructor(field = [[]]){
         this.field = field;
-        this.locationX = 0;
-        this.locationY = 0;
-        this.field[0][0] = pathCharacter;
+        const startLocation = {
+            x: Math.floor(Math.random() * 10),
+            y: Math.floor(Math.random() * 10)
+          };
+        this.locationX = startLocation.x
+        this.locationY = startLocation.y
+        this.field[this.locationY][this.locationX] = pathCharacter;
+
     }
 
     runGame() {
